@@ -594,7 +594,7 @@ class Neighbors:
         self.n_neighbors = n_neighbors
         self.knn = knn
 
-        x = _choose_representation(self._adata, use_rep=use_rep, n_pcs=n_pcs)
+        x = _choose_representation_compat(self._adata, use_rep=use_rep, n_pcs=n_pcs)
         if isinstance(x, HasArrayNamespace):
             # sklearn transformers require numpy, so need to convert at boundary
             x = np.asarray(x)

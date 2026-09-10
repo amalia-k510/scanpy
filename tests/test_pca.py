@@ -156,7 +156,7 @@ def possible_solvers(
         case (type() as dc, False) if issubclass(dc, CSBase):
             svd_solvers = {"arpack", "randomized"}
         case (helpers.asarray | params.as_dense_jax_array, True):
-            svd_solvers = {"auto", "full", "arpack", "randomized"} | SKLEARN_ADDITIONAL
+            svd_solvers = {"auto", "full", "arpack", "randomized", "covariance_eigh"}
         case (helpers.asarray | params.as_dense_jax_array, False):
             svd_solvers = {"arpack", "randomized"}
         case _:
